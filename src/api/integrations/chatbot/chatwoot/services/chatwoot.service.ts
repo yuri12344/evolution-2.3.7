@@ -354,7 +354,7 @@ private cw<T>(options: ApiRequestOptions, tokenOverride?: string): Promise<T> {
     throw new Error('[ChatwootService:cw] token ausente (api_access_token) — vai dar Unauthorized');
   }
 
-  return chatwootRequest<T>(this.getClientCwConfig(token), {
+  return chatwootRequest<T>(this.getClientCwConfig(), {
     ...options,
     headers: {
       ...(options.headers || {}),
